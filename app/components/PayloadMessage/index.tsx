@@ -2,7 +2,6 @@
 
 import { signTokenAction } from '@/app/actions/signTokenAction';
 import { verifyTokenAction } from '@/app/actions/verifyTokenAction';
-import { JwtPayload } from 'jsonwebtoken';
 import React, { useState } from 'react';
 import { decodePayload } from './decodePayload';
 
