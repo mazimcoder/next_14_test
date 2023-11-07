@@ -2,6 +2,10 @@
 
 An example using Next.js 14 with Server Actions to sign a token and verify it natively.
 
+<br/>
+<img src="./public/readme_0.jpg" >
+<br/>
+
 ## Getting Started
 
 - install dependencies
