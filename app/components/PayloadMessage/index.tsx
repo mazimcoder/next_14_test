@@ -2,8 +2,8 @@
 
 import { signTokenAction } from '@/app/actions/signTokenAction';
 import { verifyTokenAction } from '@/app/actions/verifyTokenAction';
+import { decodePayload } from '@/app/users/decodePayload';
 import React, { useState } from 'react';
-import { decodePayload } from './decodePayload';
 
 export const PayloadMessage = ()=>{
     const [payload, setPayload] = useState<string | null>(null);
