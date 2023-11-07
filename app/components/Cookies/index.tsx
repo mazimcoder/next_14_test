@@ -21,7 +21,6 @@ export const Cookies = ({number}:{
                 }) as string;
             } else if(document.cookie.includes('=')){
                 const splits = document.cookie.split('=');
-                console.log(splits);
                 if(splits[0].includes('user') && splits.length>1){
                     cookiesUserClient = splits[1];
                 }
