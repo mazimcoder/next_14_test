@@ -16,9 +16,16 @@ export const Cookies = ({number}:{
 
             let cookiesUserClient = '';
             if(document.cookie.indexOf(';')>0){
-                cookiesUserClient = document.cookie.split(';').find((item)=>{
-                    return item.includes(`Users-${cookiesUserServer?.value}`);
-                }) as string;
+                const splits = document.cookie.split(';');
+                const cookieUser = splits.find((item)=>{
+                    return item.includes(`user`);
+                });
+                if(cookieUser && cookieUser.includes('=')){
+                    const splits = cookieUser.split('=');
+                    if(splits[0].includes('user') && splits.length>1){
+                        cookiesUserClient = splits[1];
+                    } 
+                }
             } else if(document.cookie.includes('=')){
                 const splits = document.cookie.split('=');
                 if(splits[0].includes('user') && splits.length>1){
