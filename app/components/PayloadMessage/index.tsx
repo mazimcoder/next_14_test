@@ -13,14 +13,14 @@ export const PayloadMessage = ()=>{
         <div className='max-w-5xl w-full flex flex-col items-center justify-center gap-8'>
             <input className="w-full h-12 px-6 text-lg bg-slate-200 text-gray-800 placeholder-gray-500 border rounded-lg focus:shadow-outline" placeholder="Payload..." 
             onChange={(e=>{
-                if(e.target.value === null){
+                if(!e.target.value){
                     return;
                 }
                 setPayload(e.target.value);
             })}/>
             <input className="w-full h-12 px-6 text-lg bg-slate-200 text-gray-800 placeholder-gray-500 border rounded-lg focus:shadow-outline" placeholder="Token to verify..." 
             onChange={(e=>{
-                if(e.target.value === null){
+                if(!e.target.value){
                     return;
                 }
                 setSignedToken(e.target.value);
