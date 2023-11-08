@@ -26,4 +26,6 @@ yarn dev
 
 <br/>
 
+### Star this repo if you like it! :star: :heart:
+
 ### Author: [Mustafa Azim](https://github.com/mazimcoder)
