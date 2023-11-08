@@ -18,6 +18,13 @@ export const PayloadMessage = ()=>{
                 }
                 setPayload(e.target.value);
             })}/>
+            <input className="w-full h-12 px-6 text-lg bg-slate-200 text-gray-800 placeholder-gray-500 border rounded-lg focus:shadow-outline" placeholder="Token to verify..." 
+            onChange={(e=>{
+                if(e.target.value === null){
+                    return;
+                }
+                setSignedToken(e.target.value);
+            })}/>
             <div className='flex flex-row items-center justify-center gap-8'>
                 <button className='w-24 h-12 px-6 text-lg bg-slate-200 text-gray-800 border rounded-lg focus:shadow-outline'
                 onClick={
@@ -37,9 +44,17 @@ export const PayloadMessage = ()=>{
                     (e) => {
                         e.preventDefault();
                         (async () => {
-                            const verifiedPayload = await verifyTokenAction(signedToken!);
-                            const decodedPayload = decodePayload(verifiedPayload!);
-                            setVerifiedPayload(decodedPayload);
+                            try{
+                                const verifiedPayload = await verifyTokenAction(signedToken!);
+                                const decodedPayload = decodePayload(verifiedPayload!);
+                                setVerifiedPayload(decodedPayload);
+                            }catch(err){
+                                setVerifiedPayload({
+                                    payload:'Invalid Token!',
+                                    exp:'',
+                                })
+                            }
+                            
                         })();
                     }
                 }>
